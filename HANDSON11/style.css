@@ -1,0 +1,47 @@
+#parent{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+}
+#childOne{
+    height:200px;
+    width:200px;
+    background-color:rgb(0, 255, 68);
+    margin-bottom: 50px;
+}
+
+
+#childTwo{
+    height:200px;
+    width:200px;
+    background-color: rgb(255, 98, 0);
+    margin-bottom: 50px;
+}
+
+
+
+
+#childThree{
+    height:200px;
+    width:200px;
+    background-color: rgb(255, 0, 128);
+    margin-bottom: 50px;
+}
+
+button{
+    height:50px;
+    width:180px;
+    background-color: #ac1bd8;
+    color:#ffffff;
+    border-radius:10px;
+    font-size: 20px;
+}
+#direction{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    
+}
+#dropdown{
+    margin:100px 0px 0px 20px;
+}

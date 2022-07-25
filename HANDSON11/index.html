@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="text">This is the text</div>
+    <h1>Hi! This is Reshma</h1>
+    <div class="box">This is a box</div>
+    <h1>Hello</h1>
+    <div id="parent">
+        <div id="childOne"></div>
+        <div id="childTwo"></div>
+        <div id="childThree"></div>
+    </div>
+    <button onclick="changingdirection()">Change Flex Direction</button>
+
+    <p style="color:red; font-size:30px;">what is the difference between window vs document?</p>
+    <p style="color:blue; font-size:20px;">Window Object-Top of the hierarchy.It is the outmost element of the object hierarchy</p>
+    <p style="color:blue; font-size:20px;">Document Object-Each HTML document that gets loaded into a window becomes a document object</p>
+
+
+
+    <!-- Q7 -->
+    <div id="heading"></div>
+
+
+
+ <h1>Hello World</h1>
+ <button onclick="changeText()">Replace Text</button>
+    <div id="direction">
+        <div id="hours"></div>
+        <div id="minutes"></div>
+        <div id="seconds"></div>
+        <div id="am-pm"></div>
+    </div>
+    
+
+    <!-- Q10 -->
+    <div id="dropdown">
+    <form>
+    <label for="year">Select one from the given options :</label>
+  <select name="year" id="year">
+    <option value="2020-2021">2020-2021</option>
+    <option value="2021-2022">2021-2022</option>
+  </select>
+    </form>
+    </div>
+    <p>The value of the selected option is:</p>
+    <span class="output"></span>
+    <div><button onclick="getOption()">check option</button></div><br><br>
+
+
+
+    <!-- Q11 -->
+    <div id="form">
+        <form>
+            <label for="name">Name :</label>
+            <input type= ="text" id="name" name="name" value = "" placeholder="Enter your name" required><br><br>
+            <label for="email">Email :</label>
+            <input type="text" id="email" name="email" value="" placeholder="enter you email" required><br><br>
+            <label for="contact">Mobile Number :</label>
+            <input type="tel" id="contact" name="contact" value="+91" placeholder=""  maxlength=10 required><br><br>
+            <label for="bYear">Birth Year :</label>
+            <input type="date" id="bYear" name="bYear" value="" placeholder="enter your birth year" min="1995" required><br><br>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
