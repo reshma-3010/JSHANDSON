@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS EC-DAY2</title>
+</head>
+<body>
+    <p>Q1.What are the different types of datatypes in javascript?</p>
+   <div> The set of types in the JavaScript language consists of primitive values and non-primitive.
+    <ol>
+        <h4>Primitive Values</h4>
+        <li>Boolean type</li>
+        <li>Null type</li>
+        <li>Undefined</li>
+        <li>Number</li>
+        <li>Bigint</li>
+        <li>String</li>
+        <li>Symbol </li>
+    </ol>
+    <ol>
+        <h4>Non-primitive</h4>
+        <li>Objects</li>
+        <li>Arrays</li>
+    </ol></div>
+    <p>Q2.In how many ways we can declare a variable?</p>
+    <div>4 Ways to Declare a JavaScript Variable:<br>
+        Using var<br>
+        Using let<br>
+        Using const<br>
+        Using nothing</div>
+
+    <p>Q3.What is Hoisting?</p>
+    <div>JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.<br>
+        Hoisting allows functions to be safely used in code before they are declared.</div>
+
+    <p>Q4.What is temporal dead zone?</p>
+    <div>A temporal dead zone (TDZ) is the area of a block where a variable is inaccessible until the moment the computer completely initializes it with a value. A block is a pair of braces ( {...} ) used to group multiple statements. 
+        Initialization occurs when you assign an initial value to a variable.</div>
+    <p>Q5.What is the difference between == & === operator?</p>
+    <div>== checks only the value<br>
+    === checks both the value and data type</div>
+    <p>Q6.What are the Different types of Operators in Javascript?</p>
+    <div>
+        JavaScript Operator Types<br>
+1.Assignment Operators.<br>
+2.Arithmetic Operators.<br>
+3.Comparison Operators.<br>
+4.Logical Operators.<br>
+5.Bitwise Operators.<br>
+6.String Operators.<br>
+7.Other Operators.
+    </div>
+</body>
+</html>
