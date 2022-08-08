@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  font-family: system-ui;
+  
+  color: rgb(61, 51, 51);
+  text-align: center;
+}
+        h1{
+            color:red;
+            font-size: 30px;
+        }
+        button{
+            width:300px;
+            height:50px;
+            color:blue;
+            background-color: cornsilk;
+            font-size: 20px;
+            border-radius: 10px;
+            border:1px solid green;
+        }
+        p{
+            color:aqua;
+            font-size: 30px;
+            font-style: italic;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    
+     <div id="parent"></div>
+    <button onclick="callheading()">Click here to see heading</button>
+
+    <h1>This is the first heading element</h1>
+    <div id = "clock" onload="currentTime()" style="font-size:30px"></div>
+
+     <p id="para1">Hello World</p>
+     <button id="btn1" onclick="replaceText()">Replace Text</button>
+
+     <p id="para2">Hello World</p>
+     <button id="btn2" onclick="hideText()">Hide Text</button>
+
+    <script>
+       //Question1.Create a button,on click of which new heading tag h1 should be added with text as"MERN stack" on the screen above button.
+       function callheading(){
+        let heading = document.createElement("h1");
+        heading.innerText = "MERN stack";
+        let parent=document.getElementById("parent");
+        parent.appendChild(heading);
+       }
+
+
+       //Question2.Write code to get 1st H1 element from a webpage using DOM.
+       let heading1=document.getElementsByTagName("h1")[0];
+       
+       //Question3.Write a code to implement timer clock using JS--display  HH:MM:SS -- the time should keep updating every second.
+
+         function currentTime(){
+            let date=new Date();
+            let hh=date.getHours();
+            let mm=date.getMinutes();
+            let ss=date.getSeconds();
+            let session="AM";
+
+
+            if(hh ==0){
+                hh =12;
+            }
+            if(hh>12){
+                hh=hh-12;
+                session="PM";
+            }
+
+            hh = (hh<10) ? "0" + hh : hh;
+            mm = (mm<10) ? "0" + mm : mm;
+            ss = (ss<10) ? "0" + ss : ss;
+
+            let time = hh + ":" + mm + ":" + ss + " " + session;
+
+
+            document.getElementById("clock").innerText = time;
+
+            let t = setTimeout(function(){
+                currentTime()
+            },1000);
+         }
+         currentTime();
+         
+
+        
+         //Question4.Create an HTML page having content as Hello World and a button named Replaced Text.When user will click on this button page content should be changed to "Welcome to Elevation Academy".
+
+         function replaceText(){
+         let changeText = document.getElementById("para1");
+         changeText.innerText = "Welcome to Elevation Academy";
+         }
+
+
+
+         //Question5.Create an HTML page having content as Hello World and a button named "Hide Text".When user will click on this button hide the "Hello World" text.
+
+         
+         function hideText(){
+            document.getElementById("para2").innerText = "";
+         }
+
+         //Question6.Given an array of 0's and 1's find out number of 0's.
+
+         function findingZeros(array){
+            let count =0;
+            for(let i=0; i<= array.length; i++){
+                
+                if(array[i]==0)
+                count++;
+            }
+            console.log("Number of zeroes in an array = " + count); 
+         }
+         findingZeros([0,0,0,1,1,1]);
+
+         //Question7.Given an array find out total no.of odd and even no's.
+
+         function findOddEven(array){
+            let countEven=0;
+            let countOdd =0;
+            for(let i=0;i<=array.length;i++){
+                if(array[i]%2 == 0){
+                    countEven++;
+                }
+                else{
+                    countOdd++;
+                }
+            }
+            console.log("Number of odd numbers in an array = " + countOdd);
+            console.log("Number of even numbers in an array = " +countEven);
+         }
+         findOddEven([0,1,2,3,4,5,6,7,8,9]);
+
+         //Question8.Given a string find out number of vowels.
+
+            let string="MAHESH";
+            let vowels="aeiou";
+            let vowelcount=0;
+            for(let i in string){
+                
+                for(let j in vowels){
+                    
+                    if(string[i].toLowerCase()==vowels[j])
+                    {
+                        vowelcount++;
+                    }
+                }
+                
+            }
+            console.log(vowelcount);
+        
+         //Question9.Write a code to create two objects with 2 properties each,one will be string and  other will be an array.
+         //Create a function to check if all the elements of the arrays in both the objects are same.
+
+         const obj1 = {
+            name:"nagarjuna",
+            colours: ["red","blue","yellow","pink","green"],
+         };
+         const obj2 = {
+            name:"chaitanya",
+            colours: ["red","blue","yellow","pink","green"],
+         };
+         function checkObj(obj1,obj2){
+            let count=0;
+            for(let i=0;i<obj1.colours.length;i++){
+                if (obj1.colours.includes(obj2.colours[i]))
+         {
+        count++;
+    }
+     else {    
+       console.log("hobbies are not same");   
+      } 
+      } 
+        if (count == obj1.colours.length)  {
+      console.log("All the elements are same");
+       } 
+    } 
+        checkObj(obj1,obj2);
+         
+    </script>
+    
+</body>
+</html>
