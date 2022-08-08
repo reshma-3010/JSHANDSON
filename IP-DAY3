@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP-DAY3</title>
+</head>
+<body>
+    <script>
+//Question1.What is callback hell?
+
+//Call backs are just the name/convection for using javascript.It instead of immediately returning
+//results like other functions,takes time to produce the results.So,If we stuck in some particular call which
+//prevents us from making further calls ends us into callback hell.
+//The structure of callback hell looks like pyramid/arrow shape.
+//example for call back hell:
+
+const getEmpId = () =>{
+    setTimeout(()=>{
+        console.log("Fetching the ID's");
+        let id = [1,2,3,4,5];
+        console.log(id);
+        setTimeout(()=>{
+            let empDetails ={
+                fName:"RESHMA",
+                lName:"dudekula",
+                age:21,
+            }
+            console.log(`My name is ${empDetails.fName} ${empDetails.lName} and my current age is ${empDetails.age}`);
+            setTimeout(()=>{
+                empDetails.gender = "Female";
+                console.log(`My name is ${empDetails.fName} ${empDetails.lName} ,my current age is ${empDetails.age} and my gender is ${empDetails.gender}`);
+            },3000);
+        },2000);
+    },1000);
+}
+
+getEmpId();
+
+
+
+
+//Question2.What are promises and why do we need them?
+//Promises:Promises are used to handle asynchronous operations in javascript.The are easy to manage when dealing with multiple asynchronous operations.
+//where callbacks can create callback hell leading to unmanageable code.It also allows us to make API calls or fetch data from web servers successfully. If not able to do so
+//fetching us with error message.
+
+//It have three stages.
+//1.Pending 2.Resolved(fulfilled)  3.Rejected.
+
+const getId = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        let id = [1,2,3,4,5];
+        resolve(id);
+       // reject("Error in fetching the details");
+    },2000);
+
+});
+
+getId
+.then((data)=>{
+    console.log("The data resolved",data);
+})
+.catch((error)=>{
+    console.log(error);
+});
+
+
+
+
+
+//Question3.What is promise chaining?
+//Javascript promise chaining pattern that chains the promises to execute asynchronous operations in sequence.
+let p = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve(20);
+    },2000);
+});
+p
+.then((result)=>{
+    console.log(result);//10 //after 2 secs
+    return result*2;
+}).then((result)=>{
+    console.log(result); //10*2 = 20
+    return result*3;
+});
+
+
+
+//Question4.What is the purpose of async/await keywords?
+//1.Async/Await is used to work with promises in asynchronous functions.
+//2.async/await is basically used to ignore promises.
+
+
+
+
+
+//Question5.Give an example of async/await.
+//They are used to handle promises more efficiently.The word async before a function always mean that the function always return a promise.
+//So,we therefore use async before the function name to return a promise instead of value.
+//Await is used to wait for the result that it to be return from the promise,So we await when we are calling a function which return a promise.
+//Also,we can use them(async/await) for making API's calls.
+//Await is always used with the keyword async.
+
+async function example(){
+    let promise = new Promise((resolve,reject)=>{
+        setTimeout(()=>resolve("done!"),2000)
+    });
+
+    let result = await promise; //wait until the promise resolve
+    alert(result); //
+}
+example();
+
+//Question6.What is hoisting.
+//A variable or function can be used before it has been declaration.
+//let and const doesn't support hoisting.
+// var supports hoisting.
+//Note:Declaration part is hoisted only not intialization.
+//a = 30;
+//console.log(a);
+//var a;
+
+//var a;
+//console.log(a); //undefined
+//a=10;
+
+
+//Question7.What is the DOM.
+//DOM stands for Document Object Model.
+//It is a programming interface that allows us to create,change or remove elements from the document.
+//We can also add events to these elements to make our page more dynamic.
+//The DOM views an HTML document as a tree of nodes.A node represens an HTML element.
+
+
+
+//Question8.Difference between undefined vs not defined vs Nan.
+//undefined:
+//1.Whenever we declare a variable without assigning any value to it,javascript implicitly assigns its value as undefined.
+let student;
+console.log(student)//undefined
+// //2.When value is not assigned in array or object.
+// let array = [A,B,C,,E];
+// console.log(array); //[1,2,empty,4]
+// console.log(typeof(array[2])); //undefined
+//3.When function does'nt have a  return statement but are called for assigning a value to a variable.
+// let add=(a,b)=>{
+//     let c=a+b;
+//     //return c;
+
+// }
+// let sum = add(2,3);
+// console.log(sum);
+
+
+//Not defined:A not defined is a variable which is not declared at a given point of time with declaration keyword like var,let or const.
+console.log(a);//undefined
+var a=5;
+
+//console.log(b);//reference error:b is not defined
+b=5;
+
+//NaN:The NaN property represents a "Not-a-number" value.NaN is a number that is not a legal number.
+
+//Question9.How many operators do we have in JS.
+//Types of operators
+//1.Arithmetic operator
+//2.Comparison(relational) operator
+//3.Logical operator
+//4.Bitwise operator
+//5.Assignment operator
+//6.Special operator.
+//7.conditional or ternary operator
+
+
+
+
+//Question10.What are pure functions.
+//This is a function which gives us same output for the same input passed everytime.
+//It doesn't give different output for the same input everytime we call the functions.
+//It doesn't depends on some variables whose value might change in the future,and therefore always gives u same values.
+//examples a function which only uses constants in their body.
+
+
+function circumferenceofcircle(r){
+    let res=2*3.14*r;
+    console.log(res);
+}
+circumferenceofcircle(3);
+circumferenceofcircle(3);
+circumferenceofcircle(3);
+
+
+
+//Question11.What are arrow functions?
+//Arrow function is one of the features introduced in the ES6 version of Javascript.It allows you to create functions in a cleaner way compared to regular expressions.
+
+const sum =(a,b)=>{
+    console.log(a+b);
+
+}
+sum(2,5);
+
+    </script>
+</body>
+</html>
