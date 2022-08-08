@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP-DAY4</title>
+</head>
+<body>
+    <script>
+        //Question1.What is a Temporal Dead Zone.
+        // A temporal dead zone (TDZ) is the area of a block where a variable is inaccessible until the moment the computer completely initializes it with a value.
+        //TDZ occurs when we declare a variable with let and const keyword.
+        
+        function sum(){
+            console.log(a);//undefined
+            //console.log(b);//Reference error
+            var a = 20;
+            const b = 60;
+        }
+        sum();
+
+        //Question2.What is the for-in loop in JavaScript?Give its syntax.
+       // The for..in loop in JavaScript allows you to iterate over all property keys of an object.
+       //for (key in object) {
+  // code block to be executed
+//}
+        
+   const student={
+    name:"reshma",
+    rollno:8,
+    registrationNumber:18360045032,
+   }
+
+   for(let x in student){
+    console.log(x);
+   }
+
+
+        //Question3.Explain Local Scope,Block Scope,Functional Scope and Scope Chain in Javascript.
+
+        //Local Scope or functional scope :Local scope occurs when you create a variable inside a function.By doing that,the visibility and accessibility of the variables is only allowed within that function.
+
+        function sayHi(){
+            var name ="reshma";
+            console.log(name);
+        }
+        sayHi();
+
+        //console.log(name); //Uncaught ReferenceError:name is not defined
+
+    //Block scope:variables like let and const,can't be accessed from outside that pair of curly braces.
+    //eg:
+    {
+        let wish = "All the Best";
+        var lang = "Hindi";
+        console.log(wish); //All the Best
+    }
+    console.log(lang); //Hindi
+    //console.log(wish); // Uncaught ReferenceError: wish is not defined
+
+
+    //Scope chain:When a variable is used in javascript,the javascript engine will try to find the variable's value in the current scope.
+    //If it could not find the variable,it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.
+
+    //example:
+    let foo = 'foo';
+    function bar(){
+        let baz ='baz';
+        console.log(baz);//Prints 'baz'
+        console.log(foo);//Prints 'foo' as it is going into global scope
+    }
+    bar();
+
+
+
+
+        //Question4.What is the difference between null and undefined and where to use what?
+        //null:In javascript,null is an object.
+        //null in javascript is an assignment value.You can assign it to a variable.
+       
+        //undefined:In Javascript,undefined is a type.
+        //It means a variable declared,but no value has been assign to a value.
+        
+        //Question5.What is symbol?
+       //Symbol is a primitive data type of javascript,along with string,number,boolean,null and undefined.
+       //It was introduced in ECMAScript 2015,so just a few years ago.
+       //Once you create a symbol,its value is kept private and for internal use.
+       //Syntax:
+       //const symbol = Symbol()
+
+
+        //Question6.Write code to explain map and filter in arrays.
+        //map()
+        //map() are array mathod in javascript.
+        //The map method is used for creating a new array from an existing one,applying a functin to each one of the elements of the first array.
+        //example:
+        //const numbers = [1,2,3,4,5];
+        //const tripled =numbers.map(item =>item *3);
+        //console.log(tripled); // 3,6,9,12,15
+
+        //filter():It is the array method in javascript.
+        //The filter() method takes each element in an array and it applies a conditional statement against it.If this condition returns true,the element gets pushed to the output array.
+        //If the condition returns false,the element does not get pushed to the output array.
+        //example:
+        const students = [
+                 {name:'reshma',marks:50},
+                 {name:'mahesh',marks:90},  
+                 {name:'uma',marks:60},  
+                 {name:'kalpana',marks:80},  
+                 {name:'keerthi suresh',marks:60},  
+        ];
+
+
+        const studentMarks =students.filter(students=>students.marks >60);
+        console.log(studentMarks);//{name:'mahesh',marks:90}{name:'kalpana',marks:80}
+        //Question7.Explain passed by value and passed by reference.
+        //Pass by value:In pass by value,function is called by directly passing the value of the variable as an argument.So any changes made inside the function does not affect the original value.
+        //In this, parameters passed as an argument create its own copy.So any changes made inside the function is made to the copied value not to the original value.
+
+        //Pass by reference:In pass by reference,function is called by directly passing the reference/address of the variable as an argument,So changing the value inside the function also changes the original value.
+        //In javascript array and object follows pass by reference property.
+        //In pass by reference,parameters passed as an argument does not create its own copy.It refers to the original value so changes made inside the function affect the original value.
+
+        //Question8.Explain Self Invoking Function and its code.
+        //A self-invoking(also called self-executing) function is a nameless(anonymous) function that is invoked immediately after its definition.
+        //example:
+        (function(k){
+            console.log(k)
+        })("This is the example for self-invoking function");
+
+
+
+    </script>
+</body>
+</html>
