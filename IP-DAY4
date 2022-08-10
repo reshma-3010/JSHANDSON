@@ -14,7 +14,7 @@
         
         function sum(){
             console.log(a);//undefined
-            //console.log(b);//Reference error
+            //console.log(b);//Reference error cannot access b before initialization
             var a = 20;
             const b = 60;
         }
